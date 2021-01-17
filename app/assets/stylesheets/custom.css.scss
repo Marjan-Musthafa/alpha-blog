@@ -1,1 +1,50 @@
 @import "bootstrap";
+
+
+.navbar_brand_name{
+    font-weight: bolder;
+}
+
+.home_jumbotron{
+    background-image: asset-url("photo-1501349800519-48093d60bde0.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: 70%;
+    margin: 30px auto;
+    border: 5px solid;
+    border-radius: 5%;
+    border-color: seashell;
+}
+
+.jumbotron_content{
+    padding: 1.5rem;
+    text-align: right;
+    float: right;
+    width: 67%;
+    text-align: left;
+    margin: 25px 5px;
+
+}
+
+.jumbotron_content h1{
+    font-weight: normal;
+}
+
+body{
+    background-color: #eff7e1;
+}
+
+#sticky-footer {
+    flex-shrink: none;
+  }
+
+.new_edit_form{
+    margin-top: 75px;
+    background-color: #a3d2ca;
+    padding: 50px;
+    border-radius: 2%;
+    box-shadow: 5px 5px 5px #a3d2ca;
+
+}

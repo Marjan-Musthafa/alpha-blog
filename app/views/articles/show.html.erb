@@ -1,5 +1,29 @@
-<h2>Show Page</h2>
-<p><strong>Title    :</strong><%= @article.title %></p>
-<p><strong>Description  :</strong><%= @article.description %></p>
+<h2 class="text-center">Show Page</h2>
 
-<%= link_to "Back", articles_path%>
+
+
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+            <div class="col-6 mt-4">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <em>by Marjan Musthafa</em> 
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= @article.title %></h5>
+                        <p class="card-text"><%= @article.description %></p>
+                        <a href="<%= edit_article_path(@article) %>" class="btn btn-outline-primary">Edit</a>
+                        <%= link_to 'Delete', article_path(@article), method: :delete, data:  {confirm: "Are you sure"},class: "btn btn-outline-danger"%>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <em>Created at <%= time_ago_in_words(@article.created_at) %> ago,updated at <%= time_ago_in_words(@article.updated_at) %></em>
+                    </div>
+                </div>
+                <div class="text-center">
+                <%= link_to "Back", articles_path,class: "btn btn-primary"%>
+                </div>
+            </div> 
+        </div>
+
+</div>
