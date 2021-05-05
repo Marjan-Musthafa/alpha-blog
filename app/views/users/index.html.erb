@@ -1,0 +1,34 @@
+<h1 class="text-center">All Users</h1>
+
+<div class="flickr_pagination">
+    <%= will_paginate @users, :container => false %>
+</div>
+
+<div class="container-fluid">
+    <% @users.try(:order,"created_at DESC").each do |user| %>
+        <div class="row justify-content-center">
+            <div class="col-6 mt-4">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <%= link_to user.username,user_path(user)%>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= user.username %></h5>
+                        <p class="card-text"><%= user.articles.count %> articles</p>
+                        <a href="<%= user_path(user) %>" class="btn btn-outline-primary">View Profile</a>
+                        <% if logged_in? && current_user == user %>
+                            <a href="<%= edit_user_path(user) %>" class="btn btn-outline-primary">Edit User</a>
+                        <% end %>                        
+                    </div>
+                    <div class="card-footer text-muted">
+                        <em>Created at <%= time_ago_in_words(user.created_at) %> ago,updated at <%= time_ago_in_words(user.updated_at) %></em>
+                    </div>
+                </div>
+            </div> 
+        </div>        
+    <% end %>
+</div>
+
+<div class="flickr_pagination">
+    <%= will_paginate @users, :container => false %>
+</div>
